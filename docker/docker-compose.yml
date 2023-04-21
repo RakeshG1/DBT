@@ -1,0 +1,11 @@
+version: '3'
+services:
+
+  mssqlserver:
+    ports:
+      # - "1433:1433"
+      - ${SQL_SERVER_PORT_EXPOSE}:${SQL_SERVER_PORT_INTERNAL}
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: ${SQL_SERVER_PASSW}
+    build: ../MSSQL
